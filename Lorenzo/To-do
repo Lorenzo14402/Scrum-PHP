@@ -1,0 +1,15 @@
+INFO:
+Bestelling{
+var $bestelNummer;
+var $artikelFoto;
+var $artikelNaam;
+var $factuurNr;
+var $bestelDatum;
+var $bestelBedrag;
+var $openstaand; //true/false;
+
+    public __construct()
+    {
+
+    }
+}
