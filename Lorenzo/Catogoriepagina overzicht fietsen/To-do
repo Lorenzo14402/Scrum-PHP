@@ -1,0 +1,15 @@
+INFO:
+Bestelling{
+var $fietsNaam;
+var $fietsPrijs;
+var $artikelNaam;
+var $factuurNr;
+var $bestelDatum;
+var $bestelBedrag;
+var $openstaand; //true/false;
+
+    public __construct()
+    {
+
+    }
+}
