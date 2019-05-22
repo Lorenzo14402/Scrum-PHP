@@ -6,7 +6,7 @@
  * Time: 11:06 AM
  */
 
-require_once "DB.php";
+require_once "../DB.php";
 
 class Bestelling{
     var $bestelNummer;
@@ -16,7 +16,7 @@ class Bestelling{
     var $factuurNr;
     var $bestelDatum;
     var $bestelBedrag;
-    var $betaald; //true/false;
+   // var $betaald; //true/false;
 
     public function __construct($bn)
     {
@@ -86,20 +86,6 @@ class Bestelling{
                             <td><?php echo $this->betaald?></td>
                         </tr>
                     </table>
-                    <!--<img src="<?php /*echo $this->artikelFoto*/?>">
-                    <h3><?php /*echo $this->bestelNummer*/?></h3>
-                    <br>
-                    <strong>Artikel naam</strong>
-                    <strong>Factuur nummer</strong>
-                    <strong>Bestel datum</strong>
-                    <strong>Bestel bedrag</strong>
-                    <strong>Betaald</strong>
-                    <a><?php /*echo $this->artikelNaam*/?></a>
-                    <a><?php /*echo $this->factuurNr*/?></a>
-
-                    <a><?php /*echo $this->bestelDatum*/?></a>
-                    <a>€<?php /*echo $this->bestelBedrag*/?></a>
-                    <a><?php /*echo $this->betaald*/?></a>-->
                 </div>
             </div>
         </body>
@@ -108,7 +94,6 @@ class Bestelling{
 }
 
 $test = new Bestelling("BEST123");
-
 $test2 = new Bestelling("BEST123");
 $test2 = new Bestelling("BEST123");
 
