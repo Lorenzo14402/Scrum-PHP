@@ -10,7 +10,7 @@
 </head>
     <body>
     <div class="loginContainer">
-    <h1>Login</h1>
+    <h1>Inloggen gebruiker</h1>
     <form method="post" action="gebruiker.php">
         <div class="form-group">
             <label for="gebruikersnaam">Gebruikersnaam</label>

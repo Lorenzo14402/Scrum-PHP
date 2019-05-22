@@ -9,11 +9,13 @@
     }
     echo "Connected successfully";
 }
+
 connectDatabase("localhost", "userlogin", "root", "");
 
 //--**--CHECKEN OF ALLE GEVEVENS ZIJN INGEVULD--**--//
 $gebruikersnaam = $_POST['gebruikersnaam'];
 $wachtwoord = $_POST['wachtwoord'];
+
 if(empty($gebruikersnaam) && empty($wachtwoord)) {
     echo "Nog geen gebruikersnaam en wachtwoord ingevuld!";
 
