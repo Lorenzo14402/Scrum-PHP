@@ -1,0 +1,22 @@
+.btn {
+    background-color: gray;
+    border: none;
+}
+body{
+    max-width: 100%;
+    margin: auto;
+    padding-top: 10%;
+}
+h1 {
+    text-align: center;
+    padding-bottom: 10px;
+}
+.loginContainer{
+width: auto;
+max-width: 450px;
+margin: auto;
+height: auto;
+padding: 10px;
+border-radius: 20px;
+background-color: lightblue;
+}
