@@ -17,7 +17,7 @@
             <input type="text" class="form-control" name="gebruikersnaam" placeholder="Vul gebruikersnaam in">
         </div>
         <div class="form-group">
-            <label for="exampleInputPassword1">Wachtwoord</label>
+            <label for="wachtwoord">Wachtwoord</label>
             <input type="password" class="form-control" name="wachtwoord" placeholder="Vul uw wachtwoord in">
         </div>
         <div class="form-group form-check">

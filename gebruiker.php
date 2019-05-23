@@ -1,5 +1,6 @@
 <?php
 // --**-- DATABASE CONNECTION --**--//
+
  function connectDatabase($host, $db, $username, $password)
 {
     $conn = new mysqli($host, $username, $password, $db);
@@ -13,6 +14,7 @@
 connectDatabase("localhost", "userlogin", "root", "");
 
 //--**--CHECKEN OF ALLE GEVEVENS ZIJN INGEVULD--**--//
+
 $gebruikersnaam = $_POST['gebruikersnaam'];
 $wachtwoord = $_POST['wachtwoord'];
 
