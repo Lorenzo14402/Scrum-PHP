@@ -1,24 +1,32 @@
 <?php
+// --**-- VARIABLES VAN DE POST --**--//
+$gebruikersnaam = $_POST['gebruikersnaam'];
+$wachtwoord = $_POST['wachtwoord'];
+
+$host = "localhost";
+$username = "root";
+$password = "";
+$db = "userlogin";
+
 // --**-- DATABASE CONNECTION --**--//
 
- function connectDatabase($host, $db, $username, $password)
-{
     $conn = new mysqli($host, $username, $password, $db);
 
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
-    echo "Connected successfully";
+
+$query = "SELECT * FROM gebruiker WHERE gebruikersnaam = '$gebruikersnaam' AND wachtwoord = '$wachtwoord'";
+$result = $conn->query($query);
+
+$row = $result->fetch_assoc();
+
+if($row['gebruikersnaam'] == $gebruikersnaam && $row['wachtwoord'] == $wachtwoord){
+    echo "Login successfull";
+} else {
+    echo "Wrong username or passqword";
 }
-
-$conn->query("SELECT * FROM gebruiker WHERE gebruikersnaam = '$gebruikersnaam' AND wachtwoord = '$wachtwoord'");
-
-connectDatabase("localhost", "userlogin", "root", "");
-
 //--**--CHECKEN OF ALLE GEVEVENS ZIJN INGEVULD--**--//
-
-$gebruikersnaam = $_POST['gebruikersnaam'];
-$wachtwoord = $_POST['wachtwoord'];
 
 if(empty($gebruikersnaam) && empty($wachtwoord)) {
     echo "Nog geen gebruikersnaam en wachtwoord ingevuld!";
@@ -30,10 +38,8 @@ if(empty($gebruikersnaam) && empty($wachtwoord)) {
     echo "vul alstublieft een wachtwoord in!";
 
 } else {
-    echo "gegevens ingevuld, welkom {$gebruikersnaam}!";
+    return;
 }
 echo "</br>";
-
-echo "$gebruikersnaam </br> $wachtwoord";
 
 ?>
