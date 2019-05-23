@@ -38,8 +38,6 @@ class Bestelling{
             $this->bestelBedrag = $bestelling['bestelBedrag'];
 
             $this->makeObject();
-
-            //$this->betaald = $bestelling['betaald'];
         }else {//for null
             $this->bestelNummer = NULL;
             $this->artikelFoto = NULL;
@@ -48,7 +46,6 @@ class Bestelling{
             $this->factuurNr = NULL;
             $this->bestelDatum = NULL;
             $this->bestelBedrag = NULL;
-            $this->betaald = NULL;
 
             echo "Geen bestelNummer meegegeven.";
         }
@@ -76,14 +73,12 @@ class Bestelling{
                             <th>Factuur nummer</th>
                             <th>Bestel datum</th>
                             <th>Bestel bedrag</th>
-                            <th>Betaald</th>
                         </tr>
                         <tr>
                             <td><?php echo $this->artikelNaam?></td>
                             <td><?php echo $this->factuurNr?></td>
                             <td><?php echo $this->bestelDatum?></td>
                             <td>€<?php echo $this->bestelBedrag?></td>
-                            <td><?php echo $this->betaald?></td>
                         </tr>
                     </table>
                 </div>
@@ -92,10 +87,4 @@ class Bestelling{
         <?php
     }
 }
-
-$test = new Bestelling("BEST123");
-$test2 = new Bestelling("BEST123");
-$test2 = new Bestelling("BEST123");
-
-
 ?>

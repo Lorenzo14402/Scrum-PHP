@@ -15,6 +15,7 @@ body
     height: 277px;
     width: 222px;
     border: 1px #D7D7D7 solid;
+    float: left;
 }
 img
 {

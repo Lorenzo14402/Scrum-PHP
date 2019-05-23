@@ -28,7 +28,7 @@ class Fiets{
             $this->bezorgingStatus = NULL;
             $this->artikelNaam = NULL;
 
-            echo "Geen bestelNummer meegegeven.";
+            echo "Geen FietsID meegegeven.";
         }
     }
 
@@ -59,10 +59,4 @@ class Fiets{
         <?php
     }
  }
-
- $test = new Fiets(123);
- $test = new Fiets(123);
- $test = new Fiets(123);
- $test = new Fiets(123);
-
 ?>
