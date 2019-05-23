@@ -11,6 +11,8 @@
     echo "Connected successfully";
 }
 
+$conn->query("SELECT * FROM gebruiker WHERE gebruikersnaam = '$gebruikersnaam' AND wachtwoord = '$wachtwoord'");
+
 connectDatabase("localhost", "userlogin", "root", "");
 
 //--**--CHECKEN OF ALLE GEVEVENS ZIJN INGEVULD--**--//
