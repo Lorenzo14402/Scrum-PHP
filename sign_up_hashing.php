@@ -62,7 +62,7 @@
             </div>
             <div class="form-group">
                 <label for="age">Leeftijd</label>
-                <input type="text" class="form-control" name="age" placeholder="Leeftijd">
+                <input type="number" class="form-control" name="age" placeholder="Leeftijd">
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
@@ -103,7 +103,9 @@ if($_POST != NULL)
 
 
     // Use DBAL to send data
-    DatabaseAction::sendUserData("INSERT INTO users (userID, userFirstName, userInfix, userLastName, userEmailAddress, userPasswordHash, userHouseNumber, userStreet, userCity, userPhoneNumber, userGender, userPostalCode, userAge, userPurchases, userUsername) VALUES (NULL, '$firstname', '$infix', '$lastname', '$email', '$hash', '$housenumber', '$street', '$city', '$phonphone', '$gender', '$postalcode', '$age', '$username')");
+   // DatabaseAction::sendUserData("INSERT INTO users ('userFirstName', 'userInfix', 'userLastName', 'userEmailAddress', 'userPasswordHash', 'userHouseNumber', 'userStreet', 'userCity', 'userPhoneNumber', 'userGender', 'userPostalCode', 'userAge', 'userUsername') VALUES ('$firstname', '$infix', '$lastname', '$email', '$hash', '$housenumber', '$street', '$city', '$telephone', '$gender', '$postalcode', '$age', '$username')");
+    DatabaseAction::sendUserData("INSERT INTO `users` (`userFirstName`, `userInfix`, `userLastName`, `userEmailAddress`, `userPasswordHash`, `userHouseNumber`, `userStreet`, `userCity`, `userPhoneNumber`, `userGender`, `userPostalCode`, `userAge`, `userUsername`) VALUES ('$firstname', '$infix', '$lastname', '$email', '$hash', '$housenumber', '$street', '$city', '$telephone',  '$gender', '$postalcode', '$age',  '$username')");
 
+   // $infix
     //DatabaseAction::getUserData("SELECT * FROM users");
 }

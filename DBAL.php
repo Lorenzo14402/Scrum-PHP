@@ -8,7 +8,7 @@ class DatabaseAction
         $servername = "localhost";
         $username = "root";
         $password = "";
-        $database = "test_chaingang";
+        $database = "chaingang";
 
         try
         {
