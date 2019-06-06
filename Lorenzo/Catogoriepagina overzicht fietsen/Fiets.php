@@ -36,7 +36,62 @@ class Fiets{
     {
         ?>
         <head>
-            <link href="Fiets.css" rel="stylesheet" type="text/css">
+            <style>
+                body
+                {
+                    margin: 0;
+                    padding: 0;
+                    box-sizing: border-box;
+                    font-family: Verdana;
+                }
+                #fiets
+                {
+                    margin: 5px;
+                    float: left;
+                }
+                #content
+                {
+                    height: 277px;
+                    width: 230px;
+                    border: 1px #D7D7D7 solid;
+                    float: left;
+                }
+                table
+                {
+                    margin: 5px;
+                }
+                img
+                {
+                    height: 210px;
+                    width: 217px;
+                }
+                .blockcontent
+                {
+                    height: 33px;
+                    width: 222px;
+                }
+                button
+                {
+                    background-color: #169BD5;
+                    border-radius: 5px;
+                    outline: none;
+                    border: none;
+                    color: white;
+                    font-weight: bold;
+                }
+                button:hover
+                {
+                    background-color: white;
+                    color: black;
+                    transition: all 0.5s ease-in-out;
+                    border: 1px solid #D7D7D7;
+                }
+                td
+                {
+                    margin: 0;
+                    padding: 0;
+                }
+            </style>
         </head>
         <body>
         <div id="fiets">

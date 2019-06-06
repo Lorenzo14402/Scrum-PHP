@@ -1,0 +1,32 @@
+body
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url("background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#container
+{
+    margin-top: 55px;
+    background-color: white;
+    height: 1000px;
+}
+#filter
+{
+    width: 100%;
+    height: auto;
+}
+#filter, #fietsen h3
+{
+    padding-top: 10px;
+    color: black;
+    text-align: center;
+}
+#fietsen
+{
+    height: auto;
+    width: 100%;
+    float: left;
+}

@@ -1,0 +1,127 @@
+
+<!-- saved from url=(0096)http://localhost/phpstorm%20en%20vb/PhpStorm%20Lorenzo%20ten%20Hagen%20AO1B/Proef/voorbeeld.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title>
+        Testpagina
+    </title>
+    <link type="text/css" rel="stylesheet" href="./Testpagina_files/voorbeeld.css">
+</head>
+<body style="color: black; background-color: rgb(27, 156, 252);">
+<div id="container">
+
+    <div id="top">
+        <h1>Checkjelinkje 2.0</h1>
+
+        <div id="error_div"></div>
+
+        <div id="input">
+            <input type="text" id="url_input" placeholder="Vul een URL in" maxlength="25">
+
+            <button onclick="checkLink()">
+                Doe een checkje
+            </button>
+
+            <span id="effective_url" style="display: block;">
+                <p>Je komt uiteindelijk uit op: <a target="_blank" id="result_effective_url" href="http://www.google.nl/">http://www.google.nl/</a></p>
+            </span>
+        </div>
+    </div>
+
+    <div id="bottom">
+        <div id="result_div" style="display: block;">
+            <h2>Hier is het resultaat:</h2>
+
+            <span class="card">
+                <p>Is het een echte bank site: <span id="is_true_bank_site">Het is geen banksite.</span></p>
+            </span>
+            <span class="card">
+                <p>Banksite check: <span id="is_no_bank_site_warning">De link gaat wel naar een banksite.</span></p>
+            </span>
+            <span class="card">
+                <p>Google's advies: <span id="is_sb_safe">Google acht deze link veilig.</span></p>
+            </span>
+            <span class="card">
+                <p>Fishing test: <span id="is_su_safe" style="font-weight: normal;">Er is geen phishing op deze website.</span></p>
+            </span>
+            <span class="card">
+                <p>SSL certificaat: <span id="is_tls">Deze site heeft geen actief SSL certificaat.</span></p>
+            </span>
+            <span class="card">
+                <p>Verkorte link check:  <span id="is_shortened_url">Dit is een verkorte link</span></p>
+            </span>
+        </div>
+    </div>
+</div>
+<script>
+    
+    function displayError(error) {
+        document.getElementById("error_div").innerText = error;
+    }
+
+    function displayResult(checkResult) {
+        document.getElementsByTagName("BODY")[0].style.color = "black";
+        document.getElementsByTagName("BODY")[0].style.backgroundColor = "#1B9CFC";
+        document.getElementById("is_su_safe").style.fontWeight = "normal";
+
+        document.getElementById("effective_url").style.display = "block";
+
+        document.getElementById("result_div").style.display = "block";
+        console.log(checkResult);
+
+        document.getElementById("result_effective_url").innerText =
+            checkResult.effective_url;
+        document.getElementById("result_effective_url").href =
+            checkResult.effective_url;
+        document.getElementById("is_true_bank_site").innerText = ( checkResult.properties.is_bank_url ) ? "Het is een bank site." : "Het is geen banksite.";
+        document.getElementById("is_no_bank_site_warning").innerText = (checkResult.properties.is_no_bank_site_warning) ? "De link gaat niet naar een banksite." : "De link gaat wel naar een banksite.";
+
+        //test site http://malware.wicar.org
+        document.getElementById("is_sb_safe").innerText = ( checkResult.properties.is_sb_safe ) ? "Google acht deze link veilig." : "Google acht deze link onveilig.";/*
+
+        //test site http://phishingvoorbeeld.xyz
+        document.getElementById("is_su_safe").innerText = ( checkResult.properties.is_su_safe ) ? "Deze link is veilig" : "Onveilig gelieve niet de link te openen";*/
+        if (checkResult.properties.is_su_safe)
+        {
+            document.getElementById("is_su_safe").innerText = "Er is geen phishing op deze website.";
+        } else{
+/*
+            document.getElementById("is_su_safe").style.color = "red";
+            document.getElementById("is_su_safe").style.fontWeight = "bold";
+*/
+            document.getElementsByTagName("BODY")[0].style.backgroundColor = "red";
+            document.getElementById("is_su_safe").style.color = "red";
+            document.getElementById("is_su_safe").style.fontWeight = "bold";
+            document.getElementById("is_su_safe").innerText = "Phishing gevonden! gelieve niet de link te openen!";
+        }
+
+        document.getElementById("is_tls").innerText = (checkResult.properties.is_tls) ? "Deze site heeft een geldig SSL certificaat." : "Deze site heeft geen actief SSL certificaat.";
+        document.getElementById("is_shortened_url").innerText = (checkResult.properties.is_shortened_url) ? "Dit is een verkorte link" : "Dit is geen verkorte link.";
+
+    }
+
+    function checkLink() {
+        var url = document.getElementById("url_input").value;
+        fetch("https://api.checkyourlink.net/v1-p/check", {
+            headers: {
+                // accepts: "application/json"
+                "content-type": "application/json"
+            },
+            method: "POST",
+            body: JSON.stringify({
+                safe_url_request: {
+                    url: url
+                }
+            })
+        }).then(function(response) {
+            if (response.status !== 200) {
+                displayError("Er is iets verkeerd gegaan.");
+                return;
+            }
+            response.json().then(function(json) {
+                displayResult(json.data);
+            });
+        });
+    }
+</script>
+
+</body></html>
