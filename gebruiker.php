@@ -24,6 +24,7 @@ $row = $result->fetch_assoc();
 
 if($row['gebruikersnaam'] == $gebruikersnaam && $row['wachtwoord'] == $wachtwoord){
     echo "Login successfull";
+    ini_set('session.gc_maxlifetime', 3600);
     session_start();
 } else {
     echo "Wrong username or passqword";
