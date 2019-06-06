@@ -17,6 +17,7 @@ $db = "userlogin";
     }
 
 $query = "SELECT * FROM gebruiker WHERE gebruikersnaam = '$gebruikersnaam' AND wachtwoord = '$wachtwoord'";
+
 $result = $conn->query($query);
 
 $row = $result->fetch_assoc();
@@ -25,6 +26,7 @@ if($row['gebruikersnaam'] == $gebruikersnaam && $row['wachtwoord'] == $wachtwoor
     echo "Login successfull";
 } else {
     echo "Wrong username or passqword";
+
 }
 //--**--CHECKEN OF ALLE GEVEVENS ZIJN INGEVULD--**--//
 

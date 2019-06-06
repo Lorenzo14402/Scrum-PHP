@@ -1,0 +1,18 @@
+/*!
+ * Start Bootstrap - Shop Homepage (https://startbootstrap.com/template-overviews/shop-homepage)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-shop-homepage/blob/master/LICENSE)
+ */
+body {
+  padding-top: 20px;
+}
+
+.nieuwsbrief {
+background-color: lightgray;
+height: auto;
+width: 100%;
+margin-bottom: 10px;
+padding: 10px;
+border-radius: 5px;
+
+}
