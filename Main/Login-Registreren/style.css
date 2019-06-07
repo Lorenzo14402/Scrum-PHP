@@ -1,0 +1,33 @@
+.btn {
+    background-color: gray;
+    border: none;
+}
+body
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url("../Catogoriepagina/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+h1 {
+    text-align: center;
+    padding-bottom: 10px;
+}
+.signupContainer {
+    width: auto;
+    max-width: 450px;
+    margin: auto;
+    height: auto;
+    position: relative;
+    top: 20%;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: lightblue;
+    font-size: 25px;
+}
+#height
+{
+    height: 809px;
+}

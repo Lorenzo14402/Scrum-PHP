@@ -1,7 +1,7 @@
 <?php
     require_once "../DB.php";
-    require_once "Header.html";
-    require_once "../Catogoriepagina overzicht fietsen/Fiets.php";
+    include "../Header-Footer/Header.html";
+    require_once "../../Lorenzo/Catogoriepagina overzicht fietsen/Fiets.php";
 ?>
 <html lang="en">
 <head>
@@ -15,11 +15,11 @@
     <div class="container" id="container">
         <div id="filter">
             <h3>Catogoriepagina</h3>
-            <input type="radio" id="Heren">
+            <input type="checkbox" id="Heren">
             <label for="Heren">Heren</label><br>
-            <input type="radio" id="Vrouwen">
+            <input type="checkbox" id="Vrouwen">
             <label for="Heren">Vrouwen</label><br>
-            <input type="radio" id="Kinderen">
+            <input type="checkbox" id="Kinderen">
             <label for="Heren">Kinderen</label><br>
         </div>
         <div id="fietsen">
@@ -42,11 +42,8 @@
                 ?>
         </div>
     </div>
-    <footer class="py-4 bg-dark">
-        <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; Scrum-PHP 2019</p>
-        </div>
-        <!-- /.container -->
-    </footer>
+    <?php
+        include "../Header-Footer/Footer.html"
+    ?>
 </body>
 </html>

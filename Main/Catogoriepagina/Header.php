@@ -1,6 +1,3 @@
-<?php
-
-?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,20 +8,23 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="#">Chain gang</a>
+        <a class="navbar-brand" href="../Homepage/index.php">Chain gang</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Homepage</a>
+                    <a class="nav-link" href="../Homepage/index.php">Homepage</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Fietsen</a>
+                    <a class="nav-link" href="../Profielpagina/profiel.php">Profiel</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Profiel</a>
+                    <a class="nav-link" href="../Login-Registreren/Login.php">Inloggen</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../Login-Registreren/sign_up_hashing.php">Registreren</a>
                 </li>
             </ul>
         </div>
