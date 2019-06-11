@@ -1,3 +1,18 @@
+<?php
+require_once "../DB.php";
+
+$conn = new mysqli("127.0.0.1", "localhost", "", "scrumphp");
+
+
+if (isset($_POST['fiets']))
+{
+    $query = "SELECT FietsID from fietsen WHERE FietsID = '{$_POST['fiets']}'";
+    $conn->query($query);
+
+}
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -105,12 +120,7 @@
   <!-- /.container -->
 
   <!-- Footer -->
-  <footer class="py-5 bg-dark">
-    <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
-    </div>
-    <!-- /.container -->
-  </footer>
+
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>

@@ -18,29 +18,11 @@
             <input type="checkbox" id="Heren">
             <label for="Heren">Heren</label><br>
             <input type="checkbox" id="Vrouwen">
-            <label for="Heren">Vrouwen</label><br>
+            <label for="Vrouwen">Vrouwen</label><br>
             <input type="checkbox" id="Kinderen">
-            <label for="Heren">Kinderen</label><br>
+            <label for="Kinderen">Kinderen</label><br>
         </div>
-        <div id="fietsen">
-            <h3>Fietsen</h3>
-                <?php
-                $conf = new DB();
-                $conn = new mysqli($conf->dbhost, $conf->dbuser, $conf->dbpass, $conf->dbname);
-
-                $query = "SELECT FietsID FROM fiets WHERE FietsID BETWEEN 1 AND 8";
-                $result = $conn->query($query) or die($conn->error);
-
-                if ($result->num_rows > 0)
-                {
-                    while ($fiets = $result->fetch_assoc())
-                    {
-                        new Fiets($fiets['FietsID']);
-                    }
-                }
-
-                ?>
-        </div>
+v
     </div>
     <?php
         include "../Header-Footer/Footer.html"
