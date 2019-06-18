@@ -9,8 +9,10 @@ $password = "";
 $db = "userlogin";
 
 // --**-- DATABASE CONNECTION --**--//
+    require "Database.php";
 
-    $conn = new mysqli($host, $username, $password, $db);
+    $DB = new Database();
+    $conn = new mysqli($DB->host, $DB->username, $DB->password, $DB->db);
 
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
@@ -23,27 +25,34 @@ $result = $conn->query($query);
 $row = $result->fetch_assoc();
 
 if($row['gebruikersnaam'] == $gebruikersnaam && $row['wachtwoord'] == $wachtwoord){
-    echo "Login successfull";
-    ini_set('session.gc_maxlifetime', 3600);
+    echo "Login successfull Welcome back to the website {$gebruikersnaam}";
     session_start();
+
 } else {
-    echo "Wrong username or passqword";
+    returnToLogin();
+    echo "Wrong username or password";
 
 }
 //--**--CHECKEN OF ALLE GEVEVENS ZIJN INGEVULD--**--//
 
 if(empty($gebruikersnaam) && empty($wachtwoord)) {
     echo "Nog geen gebruikersnaam en wachtwoord ingevuld!";
+    returnToLogin();
 
 } else if(empty($gebruikersnaam)){
     echo "vul alstublieft een gebruikersnaam in!";
+    returnToLogin();
 
 } else if(empty($wachtwoord)){
     echo "vul alstublieft een wachtwoord in!";
+    returnToLogin();
 
 } else {
     return;
 }
-echo "</br>";
+
+function returnToLogin(){
+    header("Location: Login.php");
+}
 
 ?>
